@@ -43,4 +43,4 @@ springboot结合百度开源disconf做配置中心使用
     private String host;
 
 ```
-* 以上两种方式都可动态获取diconf配置中心改变的ITEM配置。
+* 以上两种方式都可动态获取diconf配置中心改变的ITEM配置（亲测通过）。
