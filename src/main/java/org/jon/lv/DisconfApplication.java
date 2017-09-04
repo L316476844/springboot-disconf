@@ -18,6 +18,7 @@ import javax.servlet.Filter;
  * version V1.0.0
  */
 @SpringBootApplication
+// 上使用@ServletComponentScan注解后，Servlet、Filter、Listener可以直接通过@WebServlet、@WebFilter、@WebListener注解自动注册，无需其他代码。
 @ServletComponentScan(basePackages = "org.jon.lv")
 @ImportResource({"classpath:config/application-*.xml"})//引入disconf
 //@MapperScan("org.jon.lv.dao")
