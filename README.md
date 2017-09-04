@@ -1,5 +1,5 @@
 # springboot-disconf
-springboot结合百度开源disconf做配置中心使用
+springboot结合百度开源disconf做配置中心使用,使用xml方式配置数据源及事务，xml方式使用mybatis mapper和plugin。使用druid数据源监控过滤sql。
 
 1. 在pom中添加disconf和zk的配置如下：
 ```
