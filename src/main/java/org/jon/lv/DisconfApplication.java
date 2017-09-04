@@ -1,5 +1,6 @@
 package org.jon.lv;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +19,7 @@ import javax.servlet.Filter;
  */
 @SpringBootApplication
 @ImportResource({"classpath:config/application-*.xml"})//引入disconf
+//@MapperScan("org.jon.lv.dao")
 public class DisconfApplication {
     // 用于处理编码问题
     @Bean

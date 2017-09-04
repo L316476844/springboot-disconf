@@ -29,9 +29,21 @@
     </dependency>
 
     <!--支持使用 JDBC 访问数据库-->
-   <!-- <dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+      <version>1.0.25</version>
     </dependency>
 
     <dependency>
@@ -39,7 +51,6 @@
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <version>1.2.1</version>
     </dependency>
-    -->
 
     <!--添加适用于生产环境的功能，如性能指标和监测等功能。 -->
     <dependency>
@@ -75,6 +86,12 @@
       <groupId>com.baidu.disconf</groupId>
       <artifactId>disconf-client</artifactId>
       <version>2.6.36</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.1</version>
     </dependency>
   </dependencies>
 

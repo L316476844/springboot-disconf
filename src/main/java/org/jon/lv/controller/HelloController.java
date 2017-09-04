@@ -1,7 +1,9 @@
 package org.jon.lv.controller;
 
+import com.alibaba.fastjson.JSON;
 import org.jon.lv.bean.PropertiesBean;
 import org.jon.lv.conf.AppConfig;
+import org.jon.lv.dao.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +28,9 @@ public class HelloController {
     @Autowired
     private PropertiesBean propertiesBean;
 
+    @Autowired
+    private UserMapper userMapper;
+
     /**
      * spring 获取配置的方式
      */
@@ -45,5 +50,10 @@ public class HelloController {
     @GetMapping("val")
     public String val(){
         return "---------------" + host;
+    }
+
+    @GetMapping("user")
+    public String user(Integer id){
+       return JSON.toJSONString(userMapper.selectByPrimaryKey(id));
     }
 }
