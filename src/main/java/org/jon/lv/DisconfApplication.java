@@ -1,8 +1,8 @@
 package org.jon.lv;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.filter.CharacterEncodingFilter;
@@ -18,9 +18,15 @@ import javax.servlet.Filter;
  * version V1.0.0
  */
 @SpringBootApplication
+@ServletComponentScan(basePackages = "org.jon.lv")
 @ImportResource({"classpath:config/application-*.xml"})//引入disconf
 //@MapperScan("org.jon.lv.dao")
 public class DisconfApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(DisconfApplication.class, args);
+    }
+
     // 用于处理编码问题
     @Bean
     public Filter characterEncodingFilter() {
@@ -28,9 +34,5 @@ public class DisconfApplication {
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
         return characterEncodingFilter;
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.run(DisconfApplication.class, args);
     }
 }
