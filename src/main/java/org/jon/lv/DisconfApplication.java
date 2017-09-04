@@ -17,7 +17,7 @@ import javax.servlet.Filter;
  * version V1.0.0
  */
 @SpringBootApplication
-@ImportResource({"classpath:config/application-disconf.xml"})//引入disconf
+@ImportResource({"classpath:config/application-*.xml"})//引入disconf
 public class DisconfApplication {
     // 用于处理编码问题
     @Bean

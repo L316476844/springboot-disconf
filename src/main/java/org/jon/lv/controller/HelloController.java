@@ -1,5 +1,6 @@
 package org.jon.lv.controller;
 
+import org.jon.lv.bean.PropertiesBean;
 import org.jon.lv.conf.AppConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,15 +23,23 @@ public class HelloController {
     @Autowired
     private AppConfig appConfig;
 
+    @Autowired
+    private PropertiesBean propertiesBean;
+
     /**
      * spring 获取配置的方式
      */
     @Value("${app.host}")
     private String host;
 
+    @GetMapping("/app")
+    public String app(){
+        return "hello world-------" + appConfig.getHost() + ":" + appConfig.getPort();
+    }
+
     @GetMapping("/hello")
     public String hello(){
-        return "hello world-------" + appConfig.getHost() + ":" + appConfig.getPort();
+        return "hello world-------" + propertiesBean.getHost() + ":" + propertiesBean.getPort();
     }
 
     @GetMapping("val")
